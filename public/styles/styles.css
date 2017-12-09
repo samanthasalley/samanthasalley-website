@@ -1,0 +1,85 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:focus {
+outline: none !important;
+}
+
+.center-v-h {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 80px 50px 500px 50px;
+  grid-template-areas:
+      "h h h h h h h h h h h h"
+      "n n n n n n n n n n n n"
+      "c c c c c c c c c c c c"
+      "f f f f f f f f f f f f";
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    grid-template-areas:
+        ". h h h h h h h h h h ."
+        ". . . . . n n n n n n ."
+        ". c c c c c c c c c c ."
+        ". f f f f f f f f f f .";
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    grid-template-areas:
+      ". . h h h h h h h h . ."
+      ". . . . . . n n n n . ."
+      ". . c c c c c c c c . ."
+      ". . f f f f f f f f . .";
+  }
+}
+
+.header {
+  background: #c57474;
+  grid-area: h;
+}
+
+.navbar {
+  text-align: center;
+  background: #95c574;
+  grid-area: n;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.content {
+  background: #7a74c5;
+  grid-area: c;
+}
+
+.footer {
+  text-align: center;
+  background: #ddd88b;
+  grid-area: f;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.nav-link {
+  font-weight: bold;
+}
