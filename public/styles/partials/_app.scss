@@ -1,0 +1,54 @@
+.app {
+  color: color(purpleDark);
+  @include grid(12, 2em);
+
+  width: 100%;
+  grid-template-rows: 100% 100% 50px 50px;
+  grid-template-areas:
+    "h h h h h h h h h h h h"
+    "c c c c c c c c c c c c"
+    ". . . b b b b b b . . ."
+    "n n n n n n n n n n n n";
+
+  @media screen and (min-width: 768px) {
+    grid-template-areas:
+        ". h h h h h h h h h h ."
+        ". . c c c c c c c c . ."
+        ". . . . b b b b . . . ."
+        ". . n n n n n n n n . .";
+  }
+
+  @media (min-width: 992px) {
+    grid-template-areas:
+      ". . h h h h h h h h . ."
+      ". . . c c c c c c . . ."
+      ". . . . . b b . . . . ."
+      ". . . n n n n n n . . .";
+  }
+
+  .content {
+    grid-area: c;
+  }
+
+  .btn {
+    @include display(flex, center, center);
+  
+    grid-area: b;
+    text-align: center;
+    
+    a { 
+      @include display(flex, center, center);
+      
+      width: 75%;
+      height: 100%;
+      border-radius: 0;
+      color: white;
+      background: color(purpleDark);
+      // box-shadow: $box-shadow;
+      
+      &:hover {
+        @include background-opacity(color(purpleDark), 0.95);
+      }
+    }
+  }
+}
