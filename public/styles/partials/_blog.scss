@@ -1,0 +1,35 @@
+#blog {
+  .blog-content {
+    height: 100%;
+    
+    .blog-post-list {
+      padding: 20px;
+
+      border: 1px solid darkgray;
+    }
+
+    .blog-item {
+      list-style: none;
+      @include display(flex, center, center);
+      @include grid(5, 0);
+      grid-template-areas:
+          "bd bd bt bt bt";
+
+      &:not(:first-child) {
+        border-top: 1px solid darkgray;
+      }
+
+      .blog-date {
+        grid-area: bd;
+      }
+
+      .blog-title {
+        grid-area: bt;
+
+        a {
+          color: color(purpleDark);
+        }
+      }
+    }
+  }
+}
