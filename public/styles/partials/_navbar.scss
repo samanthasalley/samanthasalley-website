@@ -1,0 +1,15 @@
+.navbar {
+  grid-area: n;
+  
+  @include grid(5, 0);
+  background: color(purpleDark);
+  text-align: center;
+
+  .center-v-h {
+    @include display(flex, center, center);
+    
+    .icon-link {
+      color: color(grayLight);
+    }
+  }
+}
