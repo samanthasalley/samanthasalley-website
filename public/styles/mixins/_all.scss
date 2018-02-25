@@ -1,0 +1,19 @@
+// returns custom display, justify-content, and align-items
+@mixin display($flex, $justify, $align) {
+  display: $flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// create grid display
+@mixin grid($cols, $rowGap) {
+  display: grid;
+  grid-template-columns: repeat($cols, 1fr);
+  grid-row-gap: $rowGap;
+}
+
+// take background color and opacity and convert to new rgba color
+@mixin background-opacity($color, $opacity: 0.5) {
+  background: $color; /* The Fallback */
+  background: rgba($color, $opacity);
+}
