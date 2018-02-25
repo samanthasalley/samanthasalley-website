@@ -13,16 +13,16 @@ a {
 html {
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  height: 100%;
 }
 
 body {
   margin: 0;
-  height: 100%;
   width: 100%;
+  height: 100%;
+  
+  @media screen and (min-width: 768px) {
+    height: 80%;
+    @include display(flex, center, center);
+  }
 }
-
-// body {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }
